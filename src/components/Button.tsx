@@ -6,10 +6,7 @@ interface IButton extends HTMLProps<HTMLButtonElement> {
 }
 
 const Button: FC<IButton> = ({ children, variant, type, ...props }) => {
-  const classname = 
-    variant === 'outline'
-    ? 'btn-outline'
-    : 'btn-fill'
+  const classname = variant === 'outline' ? 'btn-outline' : 'btn-fill'
 
   return (
     <button data-testid='button' type={type} className={`btn ${classname}`} {...props}>

@@ -10,9 +10,12 @@ const Card: FC<ICard> = ({ data }) => {
 
   return (
     <div data-testid='card' className='card '>
-      <div className='card-image' style={{ backgroundImage: `url(${image?.original || 'none.jpg'})` }}></div>
+      <div
+        className='card-image'
+        style={{ backgroundImage: `url(${image?.original || 'none.jpg'})` }}
+      />
       <h4 className='card-title'>{name}</h4>
-			<div className='card-summary' dangerouslySetInnerHTML={{ __html: summary }} />
+      <div className='card-summary' dangerouslySetInnerHTML={{ __html: summary }} />
     </div>
   )
 }

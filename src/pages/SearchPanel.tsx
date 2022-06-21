@@ -26,7 +26,11 @@ const SearchPanel: FC = () => {
       </div>
       <div className='text-center mt-8'>
         <h4 className='absolute'>{allData.length} results</h4>
-        <Button variant='outline' onClick={() => seeMore()} disabled={allData.length === cards.length}>
+        <Button
+          variant='outline'
+          onClick={() => seeMore()}
+          disabled={allData.length === cards.length}
+        >
           See More
         </Button>
       </div>

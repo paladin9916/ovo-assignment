@@ -1,4 +1,4 @@
-import { createContext, FC, useCallback, useContext, useEffect, useState } from 'react'
+import React, { createContext, FC, useCallback, useContext, useEffect, useState } from 'react'
 import { TCard, TCardResponse } from '../model'
 
 interface SearchContextProps {
@@ -45,12 +45,12 @@ export const useSearchContextValues = () => {
   }, [data])
 
   const handleSeeMore = useCallback(() => {
-    setCards((cards: Array<TCard>) => {
-      if (data.length > cards.length) {
-        return data.slice(0, cards.length + 3)
+    setCards((tempCards: Array<TCard>) => {
+      if (data.length > tempCards.length) {
+        return data.slice(0, tempCards.length + 3)
       }
 
-      return cards
+      return tempCards
     })
   }, [data])
 
@@ -73,8 +73,8 @@ export const useSearchContext = () => {
   return searchContext
 }
 
-const SearchDataProvider: FC<SearchContextProps> = ({ children, ...props }) => {
-  return <SearchContext.Provider value={props}>{children}</SearchContext.Provider>
-}
+const SearchDataProvider: FC<SearchContextProps> = ({ children, ...props }) => (
+  <SearchContext.Provider value={props}>{children}</SearchContext.Provider>
+)
 
 export default SearchDataProvider
