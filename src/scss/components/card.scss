@@ -1,0 +1,13 @@
+.card {
+  &-image {
+    @apply rounded-lg aspect-[4/3];
+  }
+
+  &-title {
+    @apply text-title font-sans mt-4;
+  }
+
+  &-summary {
+    @apply text-summary mt-2;
+  }
+}

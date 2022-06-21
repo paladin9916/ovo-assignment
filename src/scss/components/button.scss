@@ -1,0 +1,11 @@
+.btn {
+  @apply text-btn cursor-pointer border border-primary px-4 py-2 ml-2 transition duration-75 select-none hover:shadow-lg;
+
+  &-outline {
+    @apply bg-white text-primary hover:bg-primary hover:text-white;
+  }
+
+  &-fill {
+    @apply text-white bg-primary rounded-md;
+  }
+}
