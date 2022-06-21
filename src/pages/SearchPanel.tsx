@@ -9,7 +9,7 @@ const SearchPanel: FC = () => {
   const { onChangeQueryString, allData, cards, seeMore } = useSearchContext()
 
   return (
-    <div className='container mx-auto' data-testid='search-panel'>
+    <div className='container mx-auto px-4 mb-8' data-testid='search-panel'>
       <div className='flex items-center max-w-4xl mx-auto mt-8'>
         <Input
           value={query}
@@ -19,7 +19,7 @@ const SearchPanel: FC = () => {
           Search
         </Button>
       </div>
-      <div className='grid grid-cols-3 gap-4 mt-12'>
+      <div className='grid sm:grid-cols-3 grid-cols-1 gap-4 mt-12'>
         {cards.map((card) => (
           <Card key={card.id} data={card} />
         ))}
