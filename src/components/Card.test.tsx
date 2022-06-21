@@ -18,12 +18,12 @@ describe('Card component test', () => {
   })
 
   it('should have image as https://test.org/test.png', () => {
-    const imgDoms: HTMLCollectionOf<HTMLImageElement> = screen
+    const titleDoms: HTMLCollectionOf<HTMLHeadingElement> = screen
       .getByTestId('card')
-      .getElementsByTagName('img')
+      .getElementsByTagName('h4')
 
-    expect(imgDoms.length).toBeCloseTo(1)
-    expect(imgDoms[0].getAttribute('src')).toBe('https://test.org/test.png')
+    expect(titleDoms.length).toBeCloseTo(1)
+    expect(titleDoms[0].innerHTML).toBe('Batman')
   })
 
   it('should have name and summary', () => {
